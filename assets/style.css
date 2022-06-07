@@ -93,6 +93,9 @@ img {
 .u {
   text-decoration: underline;
 }
+.nowrap {
+  white-space: nowrap;
+}
 
 .text-blue {
   color: var(--blue);
@@ -301,7 +304,7 @@ img {
   padding-bottom: 32px;
 }
 .multiple .container {
-  max-width: 500px;
+  max-width: 440px;
   padding: 0;
 }
 .multiple__image {
@@ -672,6 +675,177 @@ img {
 }
 .works__cta--m a {
   min-width: 160px;
+}
+/* --Why us-- */
+.whyus {
+  padding-top: 42px;
+}
+.whyus .container {
+  max-width: 440px;
+  padding: 0;
+}
+.whyus__image {
+  position: relative;
+  width: 95%;
+  margin-right: 0;
+  margin-left: auto;
+}
+.whyus__image--d {
+  display: none;
+}
+.whyus__content {
+  max-width: 352px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.whyus .section__title {
+  max-width: 352px;
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 36px;
+  padding-left: 16px;
+}
+
+.whyus__content > .section__subtitle {
+  padding: 0 16px;
+  margin-left: 0;
+}
+.whyus__cards__wrapper {
+  margin-top: 48px;
+}
+.whyus__card {
+  margin-bottom: 48px;
+  padding: 0 16px;
+  max-width: 352px;
+}
+.whyus .whyus__card__title {
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+.whyus .whyus__card__img--wrapper img {
+  max-width: 60px;
+}
+
+/* --Team-building activities --*/
+.activities {
+  overflow-x: hidden;
+  background-color: var(--off-white);
+}
+.activities .container {
+  max-width: 440px;
+}
+.activities .section__title {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
+.activity .section__subtitle {
+  max-width: 320px;
+}
+.activity__text .section__subtitle {
+  max-width: 320px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.activity {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 42px;
+}
+
+.activity .activity__image {
+  text-align: center;
+}
+.activity__image img {
+  max-width: 280px;
+}
+@media (min-width: 400px) {
+  .activity {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .activity .activity__text {
+    min-width: 185px;
+    position: relative;
+    right: -7%;
+  }
+  .activity .activity__text .section__subtitle {
+    text-align: right;
+    margin-right: 16px;
+  }
+  .activity.activity--left .section__subtitle {
+    text-align: left;
+  }
+  .activity .activity__text .section__subtitle:first-child {
+    margin-top: 20px;
+  }
+  .activity__image {
+    position: relative;
+    right: -10%;
+  }
+  .activity--left .activity__text {
+    order: 2;
+    left: -7%;
+  }
+  .activity--left .activity__image {
+    left: -10%;
+  }
+}
+@media (min-width: 485px) {
+  .activity .activity__text {
+    right: 0;
+  }
+  .activity__image {
+    right: 0;
+  }
+  .activity--left .activity__image {
+    left: 0;
+  }
+  .activity--left .activity__text {
+    left: 2%;
+  }
+}
+
+/*-- VIP Corporate rewards --*/
+
+.rewards {
+  background-color: #b9e1e1;
+  background-image: url(./images/circle-sky.svg), url(./images/circle-sky.svg);
+  background-position: -70px -70px, calc(100% + 70px) calc(100% - -60px);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  padding-bottom: 48px;
+}
+.rewards .container {
+  max-width: 500px;
+  padding: 0;
+}
+.rewards__content {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+}
+.rewards__images {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: scroll;
+  padding: 0 16px;
+}
+
+.rewards .rewards__images img {
+  width: 100%;
+  max-width: 130px;
+  flex: 1;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.rewards .rewards__images img:nth-child(even) {
+  margin-top: 40px;
 }
 
 /* --Desktop styles-- */
@@ -1070,4 +1244,127 @@ img {
   .works__cta--m {
     display: none;
   }
+  /* --Why us-- */
+  .whyus {
+    margin-bottom: 16px;
+    position: relative;
+    padding-bottom: 92px;
+    padding-top: 120px;
+    overflow: hidden;
+    background-color: transparent;
+  }
+  .whyus .container {
+    max-width: 980px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .whyus::after {
+    content: "";
+    position: absolute;
+    top: 92px;
+    left: 0;
+    right: 0;
+    bottom: 91px;
+    background-color: var(--off-white);
+    z-index: -1;
+  }
+  .whyus__image {
+    width: auto;
+    position: absolute;
+    order: 2;
+    right: 0;
+    left: initial;
+  }
+  .whyus__image--d {
+    display: inline;
+    position: relative;
+    left: initial;
+    top: -13px;
+    right: -54%;
+  }
+  .whyus__image--m {
+    display: none;
+  }
+
+  .whyus__content {
+    max-width: 60%;
+    width: 60%;
+    order: 1;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .whyus .section__title {
+    max-width: 420px;
+    margin: 0 0 1em 0;
+  }
+  .whyus .section__subtitle {
+    margin: 10px 0;
+    max-width: 475px;
+  }
+  .whyus__card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    max-width: initial;
+  }
+  .whyus .whyus__card__title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .whyus__card .section__subtitle {
+    max-width: 330px;
+  }
+  .whyus .whyus__card__img--wrapper {
+    margin-right: 24px;
+  }
+  .whyus .whyus__card__img--wrapper img {
+    max-width: 80px;
+  }
+  .whyus__card__text--wrapper {
+    max-width: 352px;
+  }
+  .whyus__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* --Team-building activities --*/
+  .activities {
+    background-color: transparent;
+    background-image: url("./images/circle-off-white.svg");
+    background-repeat: no-repeat;
+    background-size: 270px;
+    background-position: calc(100% + 150px) 100px;
+  }
+  .activities .container {
+    max-width: 980px;
+  }
+  .activities .section__title {
+    max-width: 550px;
+    text-align: center;
+  }
+  .activities__wrapper {
+    padding-top: 28px;
+  }
+  .activity {
+    margin-right: 40%;
+  }
+
+  .activity .activity__text .section__subtitle {
+    max-width: 220px;
+  }
+  .activity--left {
+    margin-right: -40%;
+    margin-top: -20%;
+  }
+  .activity--left .activity__text {
+    left: 16px;
+  }
+  .activity__image img {
+    max-width: 300px;
+  }
+  /*-- VIP Corporate rewards --*/
 }

@@ -1400,9 +1400,6 @@ img {
     max-width: 325px;
     margin-left: 0;
   }
-  .every__slider {
-    pointer-events: none;
-  }
   .every__slider li img {
     vertical-align: middle;
   }

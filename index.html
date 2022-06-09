@@ -31,6 +31,9 @@
     <link rel="stylesheet" href="https://unpkg.com/@glidejs/glide@3.5.2/dist/css/glide.core.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/@glidejs/glide@3.5.2/dist/css/glide.theme.min.css" />
     <link rel="stylesheet" href="./assets/style.css" />
+
+    <!-- Lottie Animation script -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
     <main>
@@ -39,7 +42,7 @@
           <div class="container">
             <div class="hero__wrapper">
               <div class="hero__video">
-                <video muted autoplay loop playsinline poster="" src="./assets/videos/header.mp4">
+                <video muted autoplay loop playsinline poster="./assets/images/hero-video-poster.jpg" src="./assets/videos/header.mp4">
                   <source src="./assets/videos/header.mp4" type="video/mp4" />
                   Your browser does not support HTML5 video.
                 </video>
@@ -53,6 +56,33 @@
                 <div class="event__types"><a href="#">IN-PERSON</a> | <a href="#">HYBRID</a> | <a href="#">VIRTUAL</a></div>
               </div>
             </div>
+          </div>
+        </section>
+        <section class="hero__nav">
+          <div class="container">
+            <ul>
+              <li>
+                <a href="javascript:scrollIntoView('formats')">FORMATS</a>
+              </li>
+              <li>
+                <a href="javascript:scrollIntoView('experiences')"> EXPERIENCES </a>
+              </li>
+              <li>
+                <a href="javascript:scrollIntoView('addons')">ADD-ONS</a>
+              </li>
+              <li>
+                <a href="javascript:scrollIntoView('works')">HOW IT WORKS</a>
+              </li>
+              <li>
+                <a href="javascript:scrollIntoView('activities')">TEAM-BUILDING</a>
+              </li>
+              <li>
+                <a href="javascript:scrollIntoView('vip')">VIP PROGRAM</a>
+              </li>
+              <li>
+                <a href="javascript:scrollIntoView('team')">OUR TEAM</a>
+              </li>
+            </ul>
           </div>
         </section>
         <section class="every">
@@ -100,7 +130,7 @@
             </div>
           </div>
         </section>
-        <section class="multiple">
+        <section class="multiple" id="formats">
           <div class="container">
             <div class="multiple__wrapper">
               <div class="multiple__image">
@@ -115,7 +145,7 @@
                       <img src="./assets/images/in-person-icon.png" alt="" />
                     </div>
                     <div class="multiple__card__text--wrapper">
-                      <h3 class="multiple__card__title">IN-PERSON</h3>
+                      <h3 class="multiple__card__title">IN-PERSON<span class="line line-1" id="line"></span></h3>
                       <p class="section__subtitle">Our in-person events come in many shapes and sizes: in-office, off-site, with casual stop-by-stations or a real-life host, right there in front of you!</p>
                     </div>
                   </div>
@@ -124,7 +154,7 @@
                       <img src="./assets/images/virtual-icon.png" alt="" />
                     </div>
                     <div class="multiple__card__text--wrapper">
-                      <h3 class="multiple__card__title">VIRTUAL EVENTS</h3>
+                      <h3 class="multiple__card__title">VIRTUAL EVENTS<span class="line line-2" id="line"></span></h3>
                       <p class="section__subtitle">Calling all virtual teams across the globe! We’ve got 100+ options and will ship any necessary supplies.</p>
                     </div>
                   </div>
@@ -133,7 +163,7 @@
                       <img src="./assets/images/hybrid-icon.png" alt="" />
                     </div>
                     <div class="multiple__card__text--wrapper">
-                      <h3 class="multiple__card__title">HYBRID EVENTS</h3>
+                      <h3 class="multiple__card__title">HYBRID EVENTS<span class="line line-3" id="line"></span></h3>
                       <p class="section__subtitle">Gather with people near and far with an event that can support both in-person and virtual guests.</p>
                     </div>
                   </div>
@@ -142,7 +172,7 @@
             </div>
           </div>
         </section>
-        <section class="topexp">
+        <section class="topexp" id="experiences">
           <div class="container">
             <h2 class="section__title">top experiences</h2>
             <div class="topexp__slider__wrapper">
@@ -301,7 +331,7 @@
             </div>
           </div>
         </section>
-        <section class="enhance">
+        <section class="enhance" id="addons">
           <div class="container">
             <div class="enhance__wrapper">
               <div class="enhance__content">
@@ -345,7 +375,7 @@
             </div>
           </div>
         </section>
-        <section class="works">
+        <section class="works" id="works">
           <div class="container">
             <h2 class="section__title">how it works</h2>
             <p class="section__subtitle">We know time is limited for people-leaders and HR professionals, so our concierge services are here to lighten your load. Simply…</p>
@@ -435,7 +465,7 @@
                       <img src="./assets/images/PII.png" alt="" />
                     </div>
                     <div class="whyus__card__text--wrapper">
-                      <h3 class="whyus__card__title">PII COMPLIANT</h3>
+                      <h3 class="whyus__card__title">PII COMPLIANT<span class="line line-1" id="line"></span></h3>
                       <p class="section__subtitle">Feel comfortable and confident knowing we will never reuse, resell or put your guests' personal data at risk.</p>
                     </div>
                   </div>
@@ -444,7 +474,7 @@
                       <img src="./assets/images/artwork.png" alt="" />
                     </div>
                     <div class="whyus__card__text--wrapper">
-                      <h3 class="whyus__card__title">ALL ORIGINAL ARTWORK</h3>
+                      <h3 class="whyus__card__title">ALL ORIGINAL ARTWORK<span class="line line-2" id="line"></span></h3>
                       <p class="section__subtitle">Never worry about unknowingly using someone else's copyrighted work. We only use original designs and pay our artists royalties.</p>
                     </div>
                   </div>
@@ -453,7 +483,7 @@
                       <img src="./assets/images/flexible.png" alt="" />
                     </div>
                     <div class="whyus__card__text--wrapper">
-                      <h3 class="whyus__card__title">FLEXIBILE</h3>
+                      <h3 class="whyus__card__title">FLEXIBILE<span class="line line-3" id="line"></span></h3>
                       <p class="section__subtitle">Whether you have a 30-minute time limit, a large group of 3,000 or want to paint shoes instead of canvases, we’ll always go the extra mile.</p>
                     </div>
                   </div>
@@ -462,7 +492,7 @@
             </div>
           </div>
         </section>
-        <section class="activities">
+        <section class="activities" id="activities">
           <div class="container">
             <h2 class="section__title">why <span class="nowrap" style="white-space: nowrap">team-building</span> activities are important</h2>
             <div class="activities__wrapper">
@@ -487,27 +517,232 @@
             </div>
           </div>
         </section>
-        <section class="rewards">
+        <section class="rewards" id="vip">
           <div class="container">
             <div class="rewards__wrapper">
               <div class="rewards__content">
                 <h2 class="section__title">VIP Corporate Rewards</h2>
                 <p class="section__subtitle">Get early access to new experiences, preferred pricing, dedicated event planners and more when you join our VIP Corporate Rewards Program.</p>
+                <div class="rewards__cta rewards__cta--d">
+                  <a href="#" class="primary__btn">Learn More</a>
+                </div>
               </div>
               <div class="rewards__images" id="rewards__images">
                 <img class="rewards__image" src="./assets/images/uke.png" alt="" />
                 <img class="rewards__image" src="./assets/images/mixology.png" alt="" />
                 <img class="rewards__image" src="./assets/images/people.png" alt="" />
-                <img class="rewards__image" src="./assets/images/plant.png" alt="" />
-                <img class="rewards__image" src="./assets/images/chunky.png" alt="" />
+                <span class="col__2">
+                  <img class="rewards__image" src="./assets/images/plant.png" alt="" />
+                  <img class="rewards__image" src="./assets/images/chunky.png" alt="" />
+                </span>
+              </div>
+              <div class="rewards__cta rewards__cta--m">
+                <a href="#" class="primary__btn">Learn More</a>
               </div>
             </div>
           </div>
         </section>
-        <section style="height: 600px; background-color: bisque; margin-top: 100px"></section>
+        <section class="team" id="team">
+          <div class="container">
+            <h2 class="section__title">meet our team</h2>
+            <div class="team__slider">
+              <div class="glide teamSlider">
+                <div class="glide__track" data-component="slidereveal" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                      <div class="team__card">
+                        <div class="team__card__image">
+                          <img src="./assets/images/min-1.png" alt="" />
+                        </div>
+                        <div class="team__card__name">MIN BROWN<span class="line line-1"></span></div>
+                        <div class="team__card__role">
+                          Manager of Corporate <br />
+                          & Private Events
+                        </div>
+                      </div>
+                    </li>
+                    <li class="glide__slide">
+                      <div class="team__card">
+                        <div class="team__card__image">
+                          <img src="./assets/images/mackenzie-2.png" alt="" />
+                        </div>
+                        <div class="team__card__name">MACKENZIE RULNICK<span class="line line-2"></span></div>
+                        <div class="team__card__role">Event Consultant</div>
+                      </div>
+                    </li>
+                    <li class="glide__slide">
+                      <div class="team__card">
+                        <div class="team__card__image">
+                          <img src="./assets/images/danielle-3.png" alt="" />
+                        </div>
+                        <div class="team__card__name">DANIELLE SMITH<span class="line line-3"></span></div>
+                        <div class="team__card__role">
+                          Senior Event Planner <br />
+                          (aka the Events Queen)
+                        </div>
+                      </div>
+                    </li>
+                    <li class="glide__slide">
+                      <div class="team__card">
+                        <div class="team__card__image">
+                          <img src="./assets/images/matt-4.png" alt="" />
+                        </div>
+                        <div class="team__card__name">MATT ROLNICK<span class="line line-1"></span></div>
+                        <div class="team__card__role">
+                          Vice President of <br />
+                          Strategy & Innovation
+                        </div>
+                      </div>
+                    </li>
+                    <li class="glide__slide">
+                      <div class="team__card">
+                        <div class="team__card__image">
+                          <img src="./assets/images/laura-5.png" alt="" />
+                        </div>
+                        <div class="team__card__name">LAURA LUCIANO<span class="line line-2"></span></div>
+                        <div class="team__card__role">
+                          Senior Manager of Customer <br />
+                          Service & Social Care
+                        </div>
+                      </div>
+                    </li>
+                    <li class="glide__slide">
+                      <div class="team__card">
+                        <div class="team__card__image">
+                          <img src="./assets/images/jen-6.png" alt="" />
+                        </div>
+                        <div class="team__card__name">JEN YURRITA<span class="line line-3"></span></div>
+                        <div class="team__card__role">
+                          Service & Support <br />
+                          Manager
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]">
+                  <button class="slider__bullet glide__bullet" data-glide-dir="=0"></button>
+                  <button class="slider__bullet glide__bullet" data-glide-dir="=1"></button>
+                  <button class="slider__bullet glide__bullet" data-glide-dir="=2"></button>
+                  <button class="slider__bullet glide__bullet" data-glide-dir="=3"></button>
+                  <button class="slider__bullet glide__bullet" data-glide-dir="=4"></button>
+                  <button class="slider__bullet glide__bullet" data-glide-dir="=5"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="faqs">
+          <div class="container">
+            <div class="faqs__wrapper">
+              <h2 class="section__title">FAQ’s</h2>
+              <div class="faq__wrapper">
+                <div class="accordion">
+                  <div class="accordion-item">
+                    <button aria-expanded="false"><span class="accordion-title">Why is the moon sometimes out during the day?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <button aria-expanded="false"><span class="accordion-title">Why is the sky blue?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <button aria-expanded="false"><span class="accordion-title">Will we ever discover aliens?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <button aria-expanded="false"><span class="accordion-title">How much does the Earth weigh?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <button aria-expanded="false"><span class="accordion-title">How do airplanes stay up?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="faqs__image">
+                <img src="./assets/images/faqs__dots.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="numbers">
+          <div class="container">
+            <div class="numbers__card__wrapper">
+              <div class="numbers__card">
+                <div class="numbers__card__icon">
+                  <img src="./assets/images/ribbon-icon.png" alt="" />
+                </div>
+                <div class="numbers__card__number">10 YEARS <span class="line line-1" id="line"></span></div>
+                <div class="numbers__card__title">IN BUSINESS</div>
+              </div>
+              <div class="vr"></div>
+              <div class="numbers__card">
+                <div class="numbers__card__icon">
+                  <img src="./assets/images/calender-icon.png" alt="" />
+                </div>
+                <div class="numbers__card__number">300,000 <span class="line line-2" id="line"></span></div>
+                <div class="numbers__card__title">EVENTS HELD</div>
+              </div>
+              <div class="vr"></div>
+              <div class="numbers__card">
+                <div class="numbers__card__icon">
+                  <img src="./assets/images/girl-icon.png" alt="" />
+                </div>
+                <div class="numbers__card__number">1,000 <span class="line line-3" id="line"></span></div>
+                <div class="numbers__card__title">AVAILABLE HOSTS</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="clients">
+          <div class="clients__animation clients__animation--desktop" media="(min-width:960px)">
+            <lottie-player src="./assets/animations/CE-social-bar-d.json" background="transparent" loop autoplay speed="1"></lottie-player>
+          </div>
+          <div class="clients__animation clients__animation--mobile" media="max-width:960px">
+            <lottie-player src="./assets/animations/CE-social-bar-m.json" background="transparent" loop autoplay speed="1"></lottie-player>
+          </div>
+        </section>
+        <section class="piqued">
+          <div class="container">
+            <div class="piqued__wrapper">
+              <div class="piqued__content">
+                <h2 class="section__title">have we piqued your interest?</h2>
+                <p class="section__subtitle">Complete an inquiry form, and one of our team members (yes, a real person) will reach out.</p>
+                <div class="piqued__cta">
+                  <a href="#" class="primary__btn">Get in Touch</a>
+                </div>
+              </div>
+              <div class="piqued__image">
+                <img src="./assets/images/piqued.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="email__subs">
+          <div class="container">
+            <h2 class="section__title">we do emails!</h2>
+            <p class="section__subtitle">Keep up with our newest experiences and event ideas.</p>
+            <div class="form__wrapper">
+              <div class="klaviyo-form"></div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
     <script src="https://unpkg.com/@glidejs/glide@3.5.2/dist/glide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script src="./assets/main.js"></script>
   </body>
 </html>

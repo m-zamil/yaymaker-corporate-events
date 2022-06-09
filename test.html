@@ -1,85 +1,152 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>HTML DOM - Drag to scroll</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/css/demo.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&family=Source+Code+Pro&display=swap" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <style>
-      .item {
-        /* Center the content */
-        align-items: center;
-        display: flex;
-        justify-content: center;
+      .faq__container {
+        margin: 0 auto;
+        padding: 4rem;
+        width: 48rem;
+      }
 
-        /* Misc */
-        border: 1px solid #cbd5e0;
-        font-size: 2.25rem;
-        height: 12rem;
-        margin: 2rem 0;
+      .accordion .accordion-item {
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .accordion .accordion-item button[aria-expanded="true"] {
+        border-bottom: 1px solid #03b5d2;
+      }
+      .accordion button {
+        position: relative;
+        display: block;
+        text-align: left;
         width: 100%;
+        padding: 1em 0;
+        color: black;
+        font-size: 1.15rem;
+        font-weight: 400;
+        border: none;
+        background: none;
+        outline: none;
+      }
+      .accordion button:hover,
+      .accordion button:focus {
+        cursor: pointer;
+      }
+      .accordion button:hover::after,
+      .accordion button:focus::after {
+        cursor: pointer;
+        border: 1px solid #03b5d2;
+      }
+      .accordion button .accordion-title {
+        padding: 1em 1.5em 1em 0;
+      }
+      .accordion button .icon {
+        display: inline-block;
+        position: absolute;
+        top: 18px;
+        right: 0;
+        width: 22px;
+        height: 22px;
+        border: 1px solid;
+        border-radius: 22px;
+      }
+      .accordion button .icon::before {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 9px;
+        left: 5px;
+        width: 10px;
+        height: 2px;
+        background: currentColor;
+      }
+      .accordion button .icon::after {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 5px;
+        left: 9px;
+        width: 2px;
+        height: 10px;
+        background: currentColor;
+      }
+      .accordion button[aria-expanded="true"] .icon::after {
+        width: 0;
+      }
+      .accordion button[aria-expanded="true"] + .accordion-content {
+        opacity: 1;
+        max-height: 9em;
+        transition: all 200ms linear;
+        will-change: opacity, max-height;
+      }
+      .accordion .accordion-content {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 200ms linear, max-height 200ms linear;
+        will-change: opacity, max-height;
+      }
+      .accordion .accordion-content p {
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 2em 0;
       }
     </style>
   </head>
   <body>
-    <div id="container" style="height: 32rem; overflow: auto; padding: 0 2rem">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-      <div class="item">4</div>
-      <div class="item">5</div>
-      <div class="item">6</div>
-      <div class="item">7</div>
-      <div class="item">8</div>
-      <div class="item">9</div>
-      <div class="item">10</div>
+    <div class="faq__container">
+      <div class="accordion">
+        <div class="accordion-item">
+          <button aria-expanded="false"><span class="accordion-title">Why is the moon sometimes out during the day?</span><span class="icon" aria-hidden="true"></span></button>
+          <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button aria-expanded="false"><span class="accordion-title">Why is the sky blue?</span><span class="icon" aria-hidden="true"></span></button>
+          <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button aria-expanded="false"><span class="accordion-title">Will we ever discover aliens?</span><span class="icon" aria-hidden="true"></span></button>
+          <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button aria-expanded="false"><span class="accordion-title">How much does the Earth weigh?</span><span class="icon" aria-hidden="true"></span></button>
+          <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button aria-expanded="false"><span class="accordion-title">How do airplanes stay up?</span><span class="icon" aria-hidden="true"></span></button>
+          <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const ele = document.getElementById("container");
-        ele.style.cursor = "grab";
-
-        let pos = { top: 0, left: 0, x: 0, y: 0 };
-
-        const mouseDownHandler = function (e) {
-          ele.style.cursor = "grabbing";
-          ele.style.userSelect = "none";
-
-          pos = {
-            left: ele.scrollLeft,
-            top: ele.scrollTop,
-            // Get the current mouse position
-            x: e.clientX,
-            y: e.clientY,
-          };
-
-          document.addEventListener("mousemove", mouseMoveHandler);
-          document.addEventListener("mouseup", mouseUpHandler);
-        };
-
-        const mouseMoveHandler = function (e) {
-          // How far the mouse has been moved
-          const dx = e.clientX - pos.x;
-          const dy = e.clientY - pos.y;
-
-          // Scroll the element
-          ele.scrollTop = pos.top - dy;
-          ele.scrollLeft = pos.left - dx;
-        };
-
-        const mouseUpHandler = function () {
-          ele.style.cursor = "grab";
-          ele.style.removeProperty("user-select");
-
-          document.removeEventListener("mousemove", mouseMoveHandler);
-          document.removeEventListener("mouseup", mouseUpHandler);
-        };
-
-        // Attach the handler
-        ele.addEventListener("mousedown", mouseDownHandler);
-      });
-    </script>
   </body>
+  <script>
+    const items = document.querySelectorAll(".accordion button");
+
+    function toggleAccordion() {
+      const itemToggle = this.getAttribute("aria-expanded");
+
+      for (i = 0; i < items.length; i++) {
+        items[i].setAttribute("aria-expanded", "false");
+      }
+
+      if (itemToggle == "false") {
+        this.setAttribute("aria-expanded", "true");
+      }
+    }
+
+    items.forEach((item) => item.addEventListener("click", toggleAccordion));
+  </script>
 </html>

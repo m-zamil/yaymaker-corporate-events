@@ -89,45 +89,111 @@ window.onload = function () {
     },
   }).mount();
 
-  const ele = document.getElementById("rewards__images");
-  ele.style.cursor = "grab";
+  //initialize slider
+  new Glide(".teamSlider", {
+    type: "carousel",
+    gap: 10,
+    autoplay: 4000,
+    hoverpause: true,
+    keyboard: true,
+    perView: 3,
+    peek: {
+      before: 0,
+      after: 0,
+    },
+    gap: 50,
+    breakpoints: {
+      960: {
+        perView: 1,
+        peek: {
+          before: 0,
+          after: 0,
+        },
+        gap: 0,
+      },
+    },
+  }).mount();
 
-  let pos = { top: 0, left: 0, x: 0, y: 0 };
+  //faq's accordion script
+  const items = document.querySelectorAll(".accordion button");
+  function toggleAccordion() {
+    const itemToggle = this.getAttribute("aria-expanded");
+    for (i = 0; i < items.length; i++) {
+      items[i].setAttribute("aria-expanded", "false");
+    }
+    if (itemToggle == "false") {
+      this.setAttribute("aria-expanded", "true");
+    }
+  }
+  items.forEach((item) => item.addEventListener("click", toggleAccordion));
 
-  const mouseDownHandler = function (e) {
-    ele.style.cursor = "grabbing";
-    ele.style.userSelect = "none";
+  //GSAP animations
+  gsap.registerPlugin(ScrollTrigger);
 
-    pos = {
-      left: ele.scrollLeft,
-      top: ele.scrollTop,
-      // Get the current mouse position
-      x: e.clientX,
-      y: e.clientY,
-    };
+  gsap.utils.toArray("#line.line-1").forEach((el) => {
+    gsap.from(el, {
+      scrollTrigger: el,
+      scrollTrigger: {
+        trigger: el,
+        scrub: true,
+        start: "top 80%",
+        end: "top 45%",
+      },
+      scaleX: 0,
+      transformOrigin: "left center",
+      ease: "none",
+    });
+  });
 
-    document.addEventListener("mousemove", mouseMoveHandler);
-    document.addEventListener("mouseup", mouseUpHandler);
-  };
+  gsap.utils.toArray("#line.line-2").forEach((el) => {
+    gsap.from(el, {
+      scrollTrigger: el,
+      scrollTrigger: {
+        trigger: el,
+        scrub: true,
+        start: "top 80%",
+        end: "top 50%",
+      },
+      scaleX: 0,
+      transformOrigin: "left center",
+      ease: "none",
+    });
+  });
 
-  const mouseMoveHandler = function (e) {
-    // How far the mouse has been moved
-    const dx = e.clientX - pos.x;
-    const dy = e.clientY - pos.y;
+  gsap.utils.toArray("#line.line-3").forEach((el) => {
+    gsap.from(el, {
+      scrollTrigger: el,
+      scrollTrigger: {
+        trigger: el,
+        scrub: true,
+        start: "top 80%",
+        end: "top 55%",
+      },
+      scaleX: 0,
+      transformOrigin: "left center",
+      ease: "none",
+    });
+  });
 
-    // Scroll the element
-    ele.scrollTop = pos.top - dy;
-    ele.scrollLeft = pos.left - dx;
-  };
+  //GSAP speech bubbles animation
 
-  const mouseUpHandler = function () {
-    ele.style.cursor = "grab";
-    ele.style.removeProperty("user-select");
-
-    document.removeEventListener("mousemove", mouseMoveHandler);
-    document.removeEventListener("mouseup", mouseUpHandler);
-  };
-
-  // Attach the handler
-  ele.addEventListener("mousedown", mouseDownHandler);
+  gsap.utils.toArray(".speech__bubble").forEach((el) => {
+    gsap.to(el, {
+      scale: 1.3,
+      opacity: 1,
+      duration: 1,
+      yoyo: true,
+      repeat: 1,
+      scrollTrigger: {
+        trigger: el,
+        scrub: true,
+        start: "bottom 70%",
+        end: "top 20%",
+      },
+    });
+  });
 };
+
+function scrollIntoView(selectorId) {
+  document.getElementById(selectorId).scrollIntoView();
+}

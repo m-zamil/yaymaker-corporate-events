@@ -230,6 +230,7 @@ img {
 .hero__content .event__types {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 15px;
   font-weight: bold;
   max-width: 320px;
@@ -406,7 +407,7 @@ img {
   max-width: 300px;
   margin-left: 0;
   margin-right: auto;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
   padding: 0 16px;
 }
 .line {
@@ -431,7 +432,7 @@ img {
   background-color: #f9d1db;
 }
 .multiple__card {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   padding: 0 16px;
   position: relative;
 }
@@ -443,6 +444,7 @@ img {
   display: inline-block;
   margin-bottom: 0;
   padding-right: 14px;
+  margin-top: 8px;
 }
 .multiple .multiple__card__img--wrapper img {
   max-width: 60px;
@@ -821,10 +823,10 @@ img {
   margin-left: 0;
 }
 .whyus__cards__wrapper {
-  margin-top: 48px;
+  margin-top: 42px;
 }
 .whyus__card {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   padding: 0 16px;
   max-width: 352px;
 }
@@ -835,6 +837,10 @@ img {
   position: relative;
   z-index: 1;
   padding-right: 12px;
+  margin: 8px 0;
+}
+.whyus__card__text--wrapper .section__subtitle {
+  margin-top: 8px;
 }
 .whyus .whyus__card__img--wrapper img {
   max-width: 60px;
@@ -1327,6 +1333,8 @@ img {
   .hero__content .section__subtitle {
     max-width: 550px;
     margin-left: 0;
+    font-size: 16px;
+    line-height: 23px;
   }
   .hero__cta {
     margin-left: 0;
@@ -1338,15 +1346,15 @@ img {
   }
   .hero__content .event__types {
     margin-left: 0;
-    font-size: 18px;
-    max-width: 400px;
+    font-size: 16px;
+    max-width: 350px;
   }
   .hero__content .event__types a {
-    font-size: 18px;
+    font-size: 16px;
   }
   /* -- hero nav-- */
   .hero__nav {
-    top: -41px;
+    top: -48px;
   }
   .hero__nav .container {
     max-width: 948px;
@@ -1366,11 +1374,11 @@ img {
     font-size: 15px;
   }
   .hero__nav ul li:hover::before {
-    height: 15px;
+    height: 16px;
     top: -15px;
   }
   .hero__nav ul li:hover::after {
-    height: 15px;
+    height: 16px;
     bottom: -15px;
   }
 
@@ -1727,10 +1735,10 @@ img {
   .whyus::after {
     content: "";
     position: absolute;
-    top: 92px;
+    top: 96px;
     left: 0;
     right: 0;
-    bottom: 91px;
+    bottom: 86px;
     background-color: var(--off-white);
     z-index: -1;
   }
@@ -1747,6 +1755,8 @@ img {
     left: initial;
     top: -13px;
     right: -54%;
+    width: 502px;
+    height: auto;
   }
   .whyus__image--m {
     display: none;
@@ -1761,7 +1771,7 @@ img {
   }
   .whyus .section__title {
     max-width: 420px;
-    margin: 0 0 1em 0;
+    margin: 0 0 30px 0;
   }
   .whyus .section__subtitle {
     margin: 10px 0;
@@ -1770,14 +1780,14 @@ img {
   .whyus__card {
     display: flex;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 26px;
     max-width: initial;
   }
   .whyus .whyus__card__title {
     font-size: 18px;
     letter-spacing: 2px;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   .whyus__card .section__subtitle {
     max-width: 330px;

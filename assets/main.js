@@ -197,3 +197,12 @@ window.onload = function () {
 function scrollIntoView(selectorId) {
   document.getElementById(selectorId).scrollIntoView();
 }
+
+const heroNav = document.querySelector("ul.hero__nav__list");
+const heroNavList = document.querySelector("ul.hero__nav__list li.item__active");
+
+heroNav.addEventListener("mouseover", () => {
+  if (heroNavList) {
+    heroNavList.classList.remove("item__active");
+  }
+});

@@ -192,17 +192,16 @@ window.onload = function () {
       },
     });
   });
-};
+  const heroNav = document.querySelector("ul.hero__nav__list");
+  const heroNavList = document.querySelector("ul.hero__nav__list li.item__active");
 
-function scrollIntoView(selectorId) {
-  document.getElementById(selectorId).scrollIntoView();
-}
+  heroNav.addEventListener("mouseover", () => {
+    if (heroNavList) {
+      heroNavList.classList.remove("item__active");
+    }
+  });
 
-const heroNav = document.querySelector("ul.hero__nav__list");
-const heroNavList = document.querySelector("ul.hero__nav__list li.item__active");
-
-heroNav.addEventListener("mouseover", () => {
-  if (heroNavList) {
-    heroNavList.classList.remove("item__active");
+  function scrollIntoView(selectorId) {
+    document.getElementById(selectorId).scrollIntoView();
   }
-});
+};

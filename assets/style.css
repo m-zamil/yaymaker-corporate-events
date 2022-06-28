@@ -285,12 +285,16 @@ img {
   margin-bottom: 0;
   position: relative;
 }
-.hero__nav ul li:hover a {
+.hero__nav ul li:hover a,
+.hero__nav ul li:focus a,
+.hero__nav ul li:focus-within a {
   background-color: #21abca;
   background-color: #21abca;
   color: white;
 }
-.hero__nav ul li:hover::before {
+.hero__nav ul li:hover::before,
+.hero__nav ul li:focus::before,
+.hero__nav ul li:focus-within::before {
   position: absolute;
   content: "";
   display: block;
@@ -300,7 +304,9 @@ img {
   background-color: #21abca;
   border-radius: 16px 16px 0 0;
 }
-.hero__nav ul li:hover::after {
+.hero__nav ul li:hover::after,
+.hero__nav ul li:focus::after,
+.hero__nav ul li:focus-within::after {
   position: absolute;
   content: "";
   display: block;
@@ -317,7 +323,8 @@ img {
   white-space: nowrap;
   display: inline-block;
 }
-.hero__nav ul a:hover {
+.hero__nav ul a:hover,
+.hero__nav ul a:focus {
   background-color: #21abca;
   color: white;
 }
@@ -1401,11 +1408,13 @@ img {
   .hero__nav ul a {
     font-size: 15px;
   }
-  .hero__nav ul li:hover::before {
+  .hero__nav ul li:hover::before,
+  .hero__nav ul li:focus::before {
     height: 16px;
     top: -15px;
   }
-  .hero__nav ul li:hover::after {
+  .hero__nav ul li:hover::after,
+  .hero__nav ul li:focus::after {
     height: 16px;
     bottom: -15px;
   }

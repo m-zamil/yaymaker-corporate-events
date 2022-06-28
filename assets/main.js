@@ -2,34 +2,26 @@ window.onload = function () {
   //initialize slider
   new Glide(".glide", {
     type: "carousel",
-    gap: 10,
-    autoplay: 4000,
     hoverpause: true,
     keyboard: true,
-    loop: false,
-    perView: 1.3,
+    perView: 4,
     peek: {
       before: 0,
-      after: 50,
+      after: 0,
     },
+    autoplay: false,
+    gap: 20,
+    loop: false,
     breakpoints: {
-      19200: {
-        perView: 4,
-        peek: {
-          before: 0,
-          after: 0,
-        },
-        autoplay: false,
-        gap: 20,
-        loop: false,
-      },
       960: {
+        autoplay: 4000,
         perView: 1,
         peek: {
           before: 60,
           after: 60,
         },
         gap: 15,
+        loop: false,
       },
     },
   }).mount();
@@ -200,8 +192,7 @@ window.onload = function () {
       heroNavList.classList.remove("item__active");
     }
   });
-
-  function scrollIntoView(selectorId) {
-    document.getElementById(selectorId).scrollIntoView();
-  }
 };
+function scrollIntoView(selectorId) {
+  document.getElementById(selectorId).scrollIntoView();
+}

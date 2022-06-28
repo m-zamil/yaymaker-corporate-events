@@ -66,6 +66,10 @@ img {
   -ms-interpolation-mode: nearest-neighbor;
 }
 
+button {
+  display: inline-block;
+}
+
 .primary__btn {
   font-weight: bold;
   border-radius: 28px;
@@ -389,6 +393,9 @@ img {
   border: 0;
   box-shadow: none;
   background-color: transparent;
+}
+.glide__arrow img {
+  pointer-events: none;
 }
 .every__slider .glide__arrow {
   border-radius: 50%;

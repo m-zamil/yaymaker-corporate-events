@@ -1,6 +1,6 @@
 window.onload = function () {
   //initialize slider
-  new Glide(".glide", {
+  new Glide(".everySlider ", {
     type: "carousel",
     hoverpause: true,
     keyboard: true,

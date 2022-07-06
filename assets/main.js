@@ -1,4 +1,11 @@
-window.onload = function () {
+window.onload = initialize();
+document.onreadystatechange = function () {
+  if (document.readyState == "complete") {
+    initialize();
+  }
+};
+
+function initialize() {
   //initialize slider
   new Glide(".everySlider ", {
     type: "carousel",
@@ -183,7 +190,8 @@ window.onload = function () {
       heroNavList.classList.remove("item__active");
     }
   });
-};
+}
+
 function scrollIntoView(selectorId) {
   document.getElementById(selectorId).scrollIntoView();
 }

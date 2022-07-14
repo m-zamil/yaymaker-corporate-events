@@ -638,6 +638,15 @@ button {
 .glideTopexp .glideNav {
   display: none;
 }
+.experiences__cta {
+  text-align: center;
+  position: relative;
+  top: 42px;
+  min-width: 150px;
+}
+.experiences__cta a.primary__btn {
+  min-width: 150px;
+}
 
 /* --Enhance your experience-- */
 .enhance {
@@ -734,7 +743,7 @@ button {
   margin-top: 48px;
 }
 .works__card {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .works__card--1 .works__step__count {
@@ -823,16 +832,16 @@ button {
   height: 100%;
   max-width: initial;
 }
-.works__cta--m {
+.works__cta {
   text-align: center;
   min-width: 180px;
 }
-.works__cta--m a {
+.works__cta a {
   min-width: 160px;
 }
 /* --Why us-- */
 .whyus {
-  padding-top: 42px;
+  padding-top: 32px;
 }
 .whyus .container {
   max-width: 440px;
@@ -1482,7 +1491,7 @@ button {
     right: -20px;
   }
   .every__slider .slide__caption {
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 10px;
   }
   .every__cta {
@@ -1656,6 +1665,12 @@ button {
     background-image: url("./images/arrow-head-right-active.png");
     background-color: #c3c2c2;
   }
+  .experiences__cta {
+    top: 48px;
+  }
+  .experiences__cta a.primary__btn {
+    min-width: 180px;
+  }
   /* --Enhance your experience-- */
   .enhance {
     max-width: 980px;
@@ -1704,7 +1719,7 @@ button {
   /* --How it works-- */
   .works .container {
     max-width: 980px;
-    padding: 32px 0;
+    padding: 32px 0 0;
   }
   .works .section__subtitle {
     text-align: center;
@@ -1716,7 +1731,7 @@ button {
   .works__card {
     display: flex;
     align-items: center;
-    margin: 0 10% 32px;
+    margin: 0 10% 0;
   }
   .works__step__count {
     width: 120px;
@@ -1766,8 +1781,8 @@ button {
     top: -9%;
     right: -20%;
   }
-  .works__cta--m {
-    display: none;
+  .works__cta a.primary__btn {
+    min-width: 180px;
   }
   /* --Why us-- */
   .whyus {

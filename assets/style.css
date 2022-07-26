@@ -373,7 +373,7 @@ button {
   margin-right: auto;
 }
 .every__slider .slide__caption {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   letter-spacing: 3px;
   text-align: center;
@@ -401,9 +401,10 @@ button {
   border-radius: 50%;
   margin-top: 0px;
   margin-left: 0;
+  margin-top: -28px;
 }
 .every__slider .glide__arrow--left {
-  margin-left: 10px;
+  margin-left: -10px;
 }
 .every__slider .glide__arrow--right {
   right: 0;
@@ -716,6 +717,9 @@ button {
 .works {
   overflow-x: hidden;
 }
+.works .container {
+  max-width: 472px;
+}
 
 .works .section__title {
   text-align: center;
@@ -828,6 +832,12 @@ button {
   margin-left: 0;
   direction: rtl;
 }
+.works__card--3 .works__card__image {
+  right: 0;
+}
+.works__card--3 .works__card__image img {
+  max-width: initial;
+}
 .works__card__image img {
   height: 100%;
   max-width: initial;
@@ -849,7 +859,8 @@ button {
 }
 .whyus__image {
   position: relative;
-  width: 95%;
+  width: 100%;
+  padding-left: 16px;
   margin-right: 0;
   margin-left: auto;
 }

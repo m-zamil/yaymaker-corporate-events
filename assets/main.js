@@ -1,71 +1,65 @@
-window.onload = initialize();
-document.onreadystatechange = function () {
-  if (document.readyState == "complete") {
-    initialize();
-  }
-};
+window.onload = function () {
+  $(document).ready(function () {
 
-function initialize() {
-  //initialize slider
-  new Glide(".everySlider ", {
-    type: "carousel",
-    hoverpause: true,
-    keyboard: true,
-    perView: 4,
-    peek: {
-      before: 0,
-      after: 0,
-    },
-    autoplay: false,
-    gap: 20,
-    loop: false,
-    breakpoints: {
-      960: {
-        autoplay: 4000,
-        perView: 1,
-        peek: {
-          before: 60,
-          after: 60,
-        },
-        gap: 15,
-        loop: false,
+    new Glide(".everySlider ", {
+      type: "carousel",
+      hoverpause: true,
+      keyboard: true,
+      perView: 4,
+      peek: {
+        before: 0,
+        after: 0,
       },
-    },
-  }).mount();
-
-  //initialize slider
-  new Glide(".glideTopexp", {
-    type: "carousel",
-    gap: 0,
-    autoplay: 4000,
-    hoverpause: true,
-    keyboard: true,
-    perView: 3,
-    peek: {
-      before: 0,
-      after: 0,
-    },
-    breakpoints: {
-      960: {
-        perView: 1.3,
-        peek: {
-          before: 0,
-          after: 0,
+      autoplay: false,
+      gap: 20,
+      loop: false,
+      breakpoints: {
+        960: {
+          autoplay: 4000,
+          perView: 1,
+          peek: {
+            before: 60,
+            after: 60,
+          },
+          gap: 15,
+          loop: false,
         },
-        gap: 0,
       },
-    },
-  }).mount();
+    }).mount();
+  
+    //initialize slider
+    new Glide(".glideTopexp", {
+      type: "carousel",
+      gap: 0,
+      autoplay: 4000,
+      hoverpause: true,
+      keyboard: true,
+      perView: 3,
+      peek: {
+        before: 0,
+        after: 0,
+      },
+      breakpoints: {
+        960: {
+          perView: 1.3,
+          peek: {
+            before: 0,
+            after: 0,
+          },
+          gap: 0,
+        },
+      },
+    }).mount();
 
-  if (screen.width > 960) {
-    const everyLi = document.querySelectorAll(".every__slider li:not(.glide__slide--clone)");
-    if (everyLi.length > 4) {
-      console.log(everyLi.length);
-      document.querySelector(".controls").style.display = "block";
+    if (screen.width > 960) {
+      const everyLi = document.querySelectorAll(".every__slider li:not(.glide__slide--clone)");
+      if (everyLi.length > 4) {
+        console.log(everyLi.length);
+        document.querySelector(".controls").style.display = "block";
+      }
     }
-  }
 
-  //initialize slider
+    //initialize slider
   new Glide(".enhanceSlider", {
     type: "carousel",
     gap: 0,
@@ -190,7 +184,8 @@ function initialize() {
       heroNavList.classList.remove("item__active");
     }
   });
-}
+});
+};
 
 function scrollIntoView(selectorId) {
   document.getElementById(selectorId).scrollIntoView();
